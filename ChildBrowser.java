@@ -454,8 +454,8 @@ public class ChildBrowser extends Plugin {
         @Override
         public void onPageStarted(WebView view, String url,  Bitmap favicon) {
         	try{
-        		urltext.setText(url.subSequence(0, 30)+"  ...   ");
-        	}catch(Exception e){
+        		urltext.setText(url.substring(0, 30)+"  ...   ");
+        	}catch(IndexOutOfBoundsException e){
         		urltext.setText(url);
         	}
         	if(url.indexOf("http")!=-1 && dialog_p!=null){
